@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id = "ds" class = "com.tcs.dao.Datasource">
+		<!-- calls setUsername(mysqluser) -->
+		<property name="username" value = "mysqluser"></property>
+		<!-- calls setPassword(Pa$$w0rd) -->
+		<property name="password" value = "Pa$$w0rd"></property>
+		<!-- calls setUrl(jdbc:mysql://ip:port) -->
+		<property name="url" value = "jdbc:mysql://ip:port"></property>
+	</bean>
+	<bean id = "dao" class = "com.tcs.dao.CustomerDao">
+		<!-- calls setDatasource(bean:ds) -->
+		<property name = "datasource" ref = "ds"></property>
+	</bean>
+
+</beans>
