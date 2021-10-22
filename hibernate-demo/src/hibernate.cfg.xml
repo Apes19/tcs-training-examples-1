@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <!-- change the database name accordingly -->
+        <property name="connection.url">jdbc:mysql://localhost:3306/tcs_db</property>
+        <property name="connection.username">root</property>
+        <!-- change the password accordingly -->
+        <property name="connection.password">p@ssword#1</property>
+
+
+        <!-- SQL dialect is used to generate query for the database-->
+        <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <!-- prints the sql queries in the console if true -->
+        <property name="show_sql">true</property>
+
+        <!-- Create table if doesn't exist else Update the table -->
+        <property name="hbm2ddl.auto">update</property>
+		<!-- enter entity class names accordingly-->
+        <mapping class="com.tcs.Employee"/>
+
+    </session-factory>
+
+</hibernate-configuration>
+
